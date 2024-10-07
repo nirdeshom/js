@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit & Remove Element</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // Add
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+
+        // document.querySelector('.language').appendChild(li)
+        const add = document.querySelector('.language');
+        add.appendChild(li);
+    }
+    addLanguage('Python');
+
+    // Add Optimization
+    function addOptiLang(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('php')
+
+    // Edit
+    const secValue = document.querySelector('li:nth-child(2)')
+    secValue.innerHTML = "Mojo";
+
+    const newli = document.createElement('li');
+    newli.textContent = "typescript";
+    secValue.replaceWith(newli)
+
+    // Edit
+    const first = document.querySelector('li:first-child')
+    first.outerHTML = "<li>golong</li>"
+
+    // Remove 
+    // document.querySelector('li:last-child').remove()
+    const last = document.querySelector('li:last-child')
+    last.remove()
+</script>
+</html>
