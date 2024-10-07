@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Add New Element</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+
+    div.className = "main";
+    // div.id = "myId";
+    div.id = Math.round(Math.random() * 10 + 1)
+
+    div.setAttribute('title', 'gen name');
+    div.style.color = "red";
+    
+    // div.innerHTML = "<h1>NirCode Camp</h1>"
+    let addText = document.createTextNode("Hello js");
+    div.appendChild(addText);
+
+    document.body.appendChild(div);
+</script>
+</html>
